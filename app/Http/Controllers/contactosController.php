@@ -23,8 +23,9 @@ class contactosController extends Controller
     $mensaje = $request->input('mensaje');
 
     // Lógica para enviar el mensaje o almacenarlo en la base de datos
+    $contact = contactoFront::create($request->all());
 
-    return response()->json(['mensaje' => 'Mensaje enviado correctamente'], 200);
+    return response()->json(['mensaje' => 'Mensaje enviado correctamente'], 201);
 }
 
 
